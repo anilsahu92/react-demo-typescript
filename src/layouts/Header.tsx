@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 interface Props {}
 
-const Header: React.FC<Props> = (props: Props) => {
+const Header: React.FC<Props> = (props: Props): JSX.Element => {
   //const {} = props;
   //const [count, setCount] = useState<number>(0);
 

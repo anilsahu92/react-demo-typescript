@@ -8,16 +8,16 @@ export type ITodoItem = {
   completed: boolean;
 };
 
-const Todo = () => {
+const Todo = (): JSX.Element => {
   const [todo, setTodo] = useState<ITodoItem[]>([]);
   const uniqId: number = 10000 + Math.floor(Math.random() * 1000);
 
-  const addHandler = (title: string) => {
+  const addHandler = (title: string): void => {
     if (title) {
       setTodo((item) => [...item, { id: uniqId, title, completed: false }]);
     }
   };
-  const addUpdate = (id: number) => {
+  const addUpdate = (id: number): void => {
     const update: ITodoItem[] = todo.map((item) => {
       return item.id === id
         ? { ...item, completed: !item.completed }
@@ -25,7 +25,7 @@ const Todo = () => {
     });
     setTodo(update);
   };
-  const addDelete = (id: number) => {
+  const addDelete = (id: number): void => {
     setTodo(todo.filter((item) => item.id !== id));
   };
   return (

@@ -8,7 +8,7 @@ type Props = {
   update: (id: number) => void;
 };
 
-const TodoItem: React.FC<Props> = (props: Props) => {
+const TodoItem = (props: Props): JSX.Element => {
   const { id, title, completed } = props.item;
 
   return (

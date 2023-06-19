@@ -4,7 +4,7 @@ import Home from "../pages/Home";
 
 interface Props {}
 
-function PageContainer(props: Props) {
+const PageContainer = (props: Props): JSX.Element => {
   const {} = props;
 
   return (
@@ -14,6 +14,6 @@ function PageContainer(props: Props) {
       </Routes>
     </div>
   );
-}
+};
 
 export default PageContainer;

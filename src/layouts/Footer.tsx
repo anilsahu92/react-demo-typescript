@@ -5,7 +5,7 @@ interface Props {
   text?: string;
 }
 
-const Footer: React.FC<Props> = (props: Props) => {
+const Footer: React.FC<Props> = (props: Props): JSX.Element => {
   const { year } = props;
   return (
     <div className="footer text-center">
