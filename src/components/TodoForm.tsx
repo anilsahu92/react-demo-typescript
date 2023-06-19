@@ -6,21 +6,18 @@ type Props = {
 
 const TodoForm: React.FC<Props> = (props: Props) => {
   const { add } = props;
-  const [inputbox, setInput] = useState<string>("");
-  const inputRef = useRef<HTMLInputElement>(null);
+  const [input, setInput] = useState<string>("");
   const addTodo = () => {
-    console.log("in", inputbox, inputRef.current);
-    add(inputbox);
+    add(input);
     setInput("");
   };
   return (
     <div className="form-todo">
       <input
         type="text"
-        defaultValue={inputbox}
+        value={input}
         onChange={(e) => setInput(e.target.value)}
         className="inputBox"
-        ref={inputRef}
       />
       <input
         type="button"
