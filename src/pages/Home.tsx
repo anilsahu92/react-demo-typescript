@@ -9,7 +9,6 @@ const Home = (props: Props) => {
   return (
     <div className="">
       <h2>Home</h2>
-      <Todo />
     </div>
   );
 };

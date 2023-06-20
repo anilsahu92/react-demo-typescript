@@ -23,6 +23,9 @@ const Header: React.FC<Props> = (props: Props): JSX.Element => {
                 <Link to="/product">Products</Link>
               </li>
               <li>
+                <Link to="/todo">Todo</Link>
+              </li>
+              <li>
                 <Link to="/contact">Contact</Link>
               </li>
             </ul>
