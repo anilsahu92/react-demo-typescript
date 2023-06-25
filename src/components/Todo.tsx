@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TodoItem from "./TodoItem";
 import TodoForm from "./TodoForm";
+import Counter from "./Counter";
 
 export type ITodoItem = {
   id: number;
@@ -29,28 +30,31 @@ const Todo = (): JSX.Element => {
     setTodo(todo.filter((item) => item.id !== id));
   };
   return (
-    <div className="TodoWrapper">
-      <div className="todoInner">
-        <div className="todoForm">
-          <h2>Todo List</h2>
-          <TodoForm add={addHandler} />
-        </div>
-        <div className="TodoList">
-          {todo && todo.length > 0 ? (
-            todo.map((item) => (
-              <TodoItem
-                key={item.id}
-                item={item}
-                delete={addDelete}
-                update={addUpdate}
-              />
-            ))
-          ) : (
-            <p className="text-center">No item Found</p>
-          )}
+    <>
+      <div className="TodoWrapper">
+        <div className="todoInner">
+          <div className="todoForm">
+            <h2>Todo List</h2>
+            <TodoForm add={addHandler} />
+          </div>
+          <div className="TodoList">
+            {todo && todo.length > 0 ? (
+              todo.map((item) => (
+                <TodoItem
+                  key={item.id}
+                  item={item}
+                  delete={addDelete}
+                  update={addUpdate}
+                />
+              ))
+            ) : (
+              <p className="text-center">No item Found</p>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+      <Counter></Counter>
+    </>
   );
 };
 
