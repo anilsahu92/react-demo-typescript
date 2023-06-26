@@ -29,6 +29,7 @@ const Todo = (): JSX.Element => {
   const addDelete = (id: number): void => {
     setTodo(todo.filter((item) => item.id !== id));
   };
+
   return (
     <>
       <div className="TodoWrapper">

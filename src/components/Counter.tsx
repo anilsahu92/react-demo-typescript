@@ -1,16 +1,17 @@
 import React from "react";
 import type { RootState } from "../redux/store";
 import { useSelector, useDispatch } from "react-redux";
-import { decrement, increment } from "../redux/reduser/counterReduser";
+import { decrement, increment } from "../redux/reduser/counter/counterReduser";
 
 interface Props {}
 
 function Counter(props: Props) {
   const {} = props;
+  const state = useSelector((store: RootState) => store);
   const { value: count } = useSelector((store: RootState) => store.counter);
   const dispatch = useDispatch();
 
-  console.log(count);
+  console.log(count, state);
   return (
     <div className="text-center">
       <h1>Count Box :{count}</h1>
