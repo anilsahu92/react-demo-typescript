@@ -9,7 +9,7 @@ interface Props {}
 const Contacts = (props: Props) => {
   //const {} = props;
   //const [user, setTodo] = useState<any[]>([]);
-  const { data } = useSelector((store: RootState) => store.users);
+  const { data, loading } = useSelector((store: RootState) => store.users);
   const dispatch = useDispatch();
   console.log("users", data);
 
@@ -21,6 +21,7 @@ const Contacts = (props: Props) => {
     <div className="">
       <h2>Contacts</h2>
       <div className="TodoList">
+        {loading && "Loaging..."}
         {data && data.length > 0 ? (
           data.map((item: User) => <SimgleUser key={item.id} data={item} />)
         ) : (
