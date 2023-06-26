@@ -3,6 +3,8 @@ import React from "react";
 export interface User {
   id: number;
   name: string;
+  email: string;
+  phone: string;
 }
 
 interface Props {
@@ -10,11 +12,11 @@ interface Props {
 }
 
 const SimgleUser = (props: Props) => {
-  const { name, id } = props.data;
+  const { name, id, email, phone } = props.data;
 
   return (
-    <div>
-      {id}. {name}
+    <div className="d-flx">
+      {id}. {name}, <b>{email}</b>, <span>{phone}</span>
     </div>
   );
 };
